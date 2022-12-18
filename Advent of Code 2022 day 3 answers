@@ -1,0 +1,47 @@
+#adventofcode.com/2022/day/3
+import string
+
+backpacks = []
+sum = 0
+v=1
+
+d = dict.fromkeys(string.ascii_letters, 0)
+for value in d:
+    d[value]=v
+    v+=1
+
+print(d)
+
+with open ("C:backpacks.txt") as input:
+    for line in input:
+        backpacks.append(line.strip())
+
+print(backpacks)
+
+def check_value(letter):
+    global sum
+    sum+=int(d[letter])
+
+for backpack in backpacks:
+    s1 = backpack[:len(backpack)//2]
+    s2 = backpack[len(backpack) // 2:]
+    common_characters = ''.join(set(s1).intersection(s2))
+    check_value(common_characters)
+
+print(sum)
+
+print(backpacks)
+sum=0
+
+
+#adventofcode.com/2022/day/3 part 2
+n=0
+
+
+while n<300:
+    common_characters_2 = ''.join(set(backpacks[n]).intersection(backpacks[n+1]))
+    last_char = ''.join(set(common_characters_2).intersection(backpacks[n+2]))
+    check_value(last_char)
+    n+=3
+
+print(sum)
