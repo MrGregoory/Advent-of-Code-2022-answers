@@ -1,0 +1,70 @@
+#adventofcode.com/2022/day/2
+
+pairs = []
+sum = 0
+
+with open ("C:pairs.txt") as input:
+    for line in input:
+        pairs.append(line.strip())
+
+print(pairs)
+
+# A,X rock
+# B,Y paper
+# C,Z scissors
+
+
+
+for pair in pairs:
+    if 'Y' in pair:
+        sum+=2
+    elif 'X' in pair:
+        sum+=1
+    elif 'Z' in pair:
+        sum+=3
+
+for pair in pairs:
+    if ('A' in pair and 'X' in pair) or ('B' in pair and 'Y' in pair) or ('C' in pair and 'Z' in pair):
+        sum+=3
+    elif ('A' in pair and 'Z' in pair) or ('B' in pair and 'X' in pair) or ('C' in pair and 'Y' in pair):
+        sum+=0
+    elif ('A' in pair and 'Y' in pair) or ('B' in pair and 'Z' in pair) or ('C' in pair and 'X' in pair):
+        sum+=6
+
+print(sum)
+
+#adventofcode.com/2022/day/2#part2
+
+# X lose
+# Y draw
+# Z win
+
+end_sum=0
+
+for pair in pairs:
+    if 'Y' in pair:
+        end_sum+=3
+        if 'A' in pair:
+            end_sum += 1
+        if 'B' in pair:
+            end_sum += 2
+        if 'C' in pair:
+            end_sum += 3
+    if 'X' in pair:
+        end_sum += 0
+        if 'A' in pair:
+            end_sum += 3
+        if 'B' in pair:
+            end_sum += 1
+        if 'C' in pair:
+            end_sum += 2
+    if 'Z' in pair:
+        end_sum += 6
+        if 'A' in pair:
+            end_sum += 2
+        if 'B' in pair:
+            end_sum += 3
+        if 'C' in pair:
+            end_sum += 1
+
+print(end_sum)
