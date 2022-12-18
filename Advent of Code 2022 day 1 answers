@@ -5,7 +5,7 @@ numbers = []
 inner_numbers = [[]]
 calories = []
 
-with open ("C:\\Users\\Pan Grzegorz\\Desktop\\xd.txt") as input:
+with open ("values.txt") as input:
     for line in input:
         numbers.append(line.strip())
 
