@@ -1,0 +1,23 @@
+#adventofcode.com/2022/day/4
+import re
+
+
+pairs=[]
+doubles=[]
+sum=0
+
+with open ("C:\\Users\\Pan Grzegorz\\Desktop\\pary.txt") as input:
+    for line in input:
+        pairs.append(line.strip())
+
+print(pairs)
+
+
+for pair in pairs:
+    new_pair=re.split(r'[,-]', pair)
+    print(new_pair)
+
+    if (int(new_pair[0])>=int(new_pair[2]) and (int(new_pair[1])<=int(new_pair[3]))) or ((int(new_pair[0])<=int(new_pair[2])) and (int(new_pair[1])>=int(new_pair[3]))):
+        sum+=1
+
+print(sum)
