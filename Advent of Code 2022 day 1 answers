@@ -1,0 +1,39 @@
+
+#adventofcode.com/2022/day/1
+
+numbers = []
+inner_numbers = [[]]
+calories = []
+
+with open ("C:\\Users\\Pan Grzegorz\\Desktop\\xd.txt") as input:
+    for line in input:
+        numbers.append(line.strip())
+
+print(numbers)
+
+for n in numbers:
+    spliter=''
+    if n ==spliter:
+        inner_numbers.append([])
+    else:
+        inner_numbers[-1].append(int(n))
+
+print(inner_numbers)
+
+for o in inner_numbers:
+    calories.append(sum(o))
+
+print(calories)
+print(max(calories))
+
+
+#adventofcode.com/2022/day/1#part2
+
+calories.sort(reverse=True)
+
+top_three=0
+
+for x in range(3):
+    top_three+=calories[x]
+
+print(top_three)
