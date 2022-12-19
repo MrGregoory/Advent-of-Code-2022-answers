@@ -1,0 +1,31 @@
+#adventofcode.com/2022/day/5
+import re
+
+one=['R','G','H','Q','S','B','T','N']
+two=['H','S','F','D','P','Z','J']
+three=['Z','H','V']
+four=['M','Z','J','F','G','H']
+five=['T','Z','C','D','L','M','S','R']
+six=['M','T','W','V','H','Z','J']
+seven=['T','F','P','L','Z']
+eight=['Q','V','W','S']
+nine=['W','H','L','M','T','D','N','C']
+
+pairs=[]
+better_list=[]
+
+with open ("C:\\Users\\Pan Grzegorz\\Desktop\\moves.txt") as input:
+    for line in input:
+
+        pairs.append(line.split())
+
+print(pairs)
+
+for item in pairs:
+    for i in item:
+        if i.isdigit():
+            better_list.append(i)
+
+print(better_list)
+
+# WIP
