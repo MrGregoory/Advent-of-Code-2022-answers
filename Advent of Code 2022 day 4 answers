@@ -21,3 +21,15 @@ for pair in pairs:
         sum+=1
 
 print(sum)
+
+# #adventofcode.com/2022/day/4 part 2
+for pair in pairs:
+    new_pair=re.split(r'[,-]', pair)
+    print(new_pair)
+
+    if (int(new_pair[0]) or int(new_pair[1])) in range(int(new_pair[2]),int(new_pair[3])+1):
+        sum +=1
+        print(sum)
+    elif (int(new_pair[2]) or int(new_pair[3])) in range(int(new_pair[0]),int(new_pair[1])+1):
+        sum +=1
+        print(sum)
