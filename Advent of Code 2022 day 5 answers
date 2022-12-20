@@ -10,13 +10,31 @@ with open ("C:\\Users\\Pan Grzegorz\\Desktop\\moves.txt") as input:
 
         pairs.append(line.split())
 
-# print(pairs)
-# print(the_list)
+print(pairs)
+print(the_list)
 
 for item in pairs:
     for i in item:
         if not i.isdigit():
             item.remove(i)
+
+# for item in pairs:
+#     # print(item)
+#     first=int(item[0])
+#     second=int(item[1])-1
+#     third=int(item[2])-1
+#     for i in range(first):
+#         the_list[third].append(the_list[second].pop())
+#         # print(the_list)
+#
+# for item in the_list:
+#     last_row.append(item[-1])
+#
+# print(last_row)
+
+
+#adventofcode.com/2022/day/5 part 2
+placeholder=[]
 
 for item in pairs:
     # print(item)
@@ -24,7 +42,10 @@ for item in pairs:
     second=int(item[1])-1
     third=int(item[2])-1
     for i in range(first):
-        the_list[third].append(the_list[second].pop())
+        placeholder.append(the_list[second].pop())
+    for i in range(first):
+        the_list[third].append(placeholder.pop())
+
         # print(the_list)
 
 for item in the_list:
