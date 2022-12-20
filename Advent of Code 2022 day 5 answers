@@ -1,31 +1,33 @@
 #adventofcode.com/2022/day/5
-import re
 
-one=['R','G','H','Q','S','B','T','N']
-two=['H','S','F','D','P','Z','J']
-three=['Z','H','V']
-four=['M','Z','J','F','G','H']
-five=['T','Z','C','D','L','M','S','R']
-six=['M','T','W','V','H','Z','J']
-seven=['T','F','P','L','Z']
-eight=['Q','V','W','S']
-nine=['W','H','L','M','T','D','N','C']
-
+the_list=[['R','G','H','Q','S','B','T','N'],['H','S','F','D','P','Z','J'],['Z','H','V'],['M','Z','J','F','G','H'],['T','Z','C','D','L','M','S','R'],['M','T','W','V','H','Z','J'],['T','F','P','L','Z'],['Q','V','W','S'],['W','H','L','M','T','D','N','C']]
 pairs=[]
-better_list=[]
+last_row=[]
+
 
 with open ("C:\\Users\\Pan Grzegorz\\Desktop\\moves.txt") as input:
     for line in input:
 
         pairs.append(line.split())
 
-print(pairs)
+# print(pairs)
+# print(the_list)
 
 for item in pairs:
     for i in item:
-        if i.isdigit():
-            better_list.append(i)
+        if not i.isdigit():
+            item.remove(i)
 
-print(better_list)
+for item in pairs:
+    # print(item)
+    first=int(item[0])
+    second=int(item[1])-1
+    third=int(item[2])-1
+    for i in range(first):
+        the_list[third].append(the_list[second].pop())
+        # print(the_list)
 
-# WIP
+for item in the_list:
+    last_row.append(item[-1])
+
+print(last_row)
