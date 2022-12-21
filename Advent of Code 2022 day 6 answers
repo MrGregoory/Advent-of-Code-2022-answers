@@ -14,11 +14,27 @@ print(list)
 
 n=0
 
-while True:
-    if list[n]!=list[n+1] and list[n]!=list[n+2] and list[n]!=list[n+3] and list[n+1]!=list[n+2] and list[n+1]!=list[n+3] and list[n+2]!=list[n+3]:
-        print(n+4)
-        break
-    else:
-        n+=1
+#while True:
+#    if list[n]!=list[n+1] and list[n]!=list[n+2] and list[n]!=list[n+3] and list[n+1]!=list[n+2] and list[n+1]!=list[n+3] and list[n+2]!=list[n+3]:
+#        print(n+4)
+#        break
+#    else:
+#        n+=1
         
 #adventofcode.com/2022/day/6 part 2
+
+n = 0
+while True:
+
+    s = set()
+    for item in range(n,n+14):
+        s.add(data[item])
+    # print(s)
+
+    if len(s)==14:
+        print('Eureka')
+        print((n+14))
+        break
+    else:
+        # print('Skucha')
+        n+=1
