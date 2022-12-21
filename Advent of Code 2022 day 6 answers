@@ -1,0 +1,24 @@
+#adventofcode.com/2022/day/6
+
+list=[]
+
+with open("C:\\Users\\Cyf\\Desktop\\imput.txt", 'r') as file:
+    data = file.read()
+
+print(data)
+
+for char in data:
+    list.append(char)
+
+print(list)
+
+n=0
+
+while True:
+    if list[n]!=list[n+1] and list[n]!=list[n+2] and list[n]!=list[n+3] and list[n+1]!=list[n+2] and list[n+1]!=list[n+3] and list[n+2]!=list[n+3]:
+        print(n+4)
+        break
+    else:
+        n+=1
+        
+#adventofcode.com/2022/day/6 part 2
