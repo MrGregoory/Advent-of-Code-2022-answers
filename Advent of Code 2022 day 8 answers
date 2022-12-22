@@ -1,0 +1,58 @@
+data = []
+sum_horizontal = 0
+sum_vertical=0
+
+#99x99
+
+with open("C:\\Users\\Cyf\\Desktop\\trees.txt", 'r') as file:
+    for line in file:
+        data.append(line.strip())
+
+print(data)
+x = 0
+
+for num in range(99):
+    print(f"X is: {x}")
+    n = 0
+    current_biggest = data[x][0]
+    for num in range(50):
+        print(sum_horizontal)
+        print(f"Highiest is: {current_biggest}")
+        print(f"Number is: {data[x][n]}")
+        if data[x][n] > current_biggest:
+            current_biggest = data[x][n]
+            n+=1
+            sum_horizontal+=1
+        else:
+            n += 1
+    sum_horizontal += 1
+    x+=1
+
+x = 0
+
+for num in range(99):
+    print(f"X is: {x}")
+    n = -1
+    current_biggest = data[x][0]
+    for num in range(50):
+        print(sum_horizontal)
+        print(f"Highiest is: {current_biggest}")
+        print(f"Number is: {data[x][n]}")
+        if data[x][n] > current_biggest:
+            current_biggest = data[x][n]
+            n -= 1
+            sum_horizontal += 1
+        else:
+            n -= 1
+    sum_horizontal += 1
+    x += 1
+
+print(sum_horizontal+sum_vertical)
+
+m = 0
+
+with open("C:\\Users\\Cyf\\Desktop\\trees.txt", 'r') as file:
+    data= file.read()
+
+print(data)
+print(data[100])
